@@ -1,10 +1,17 @@
 #coding=utf-8
-#plot Lidar map
+#plot lidar color map
 #by Limin Feng
+import netCDF4
+import h5py
+import shapefile
+import netCDF4 as nc 
+from netCDF4 import Dataset
 import matplotlib
 from matplotlib.font_manager import FontProperties
 from matplotlib.collections import PatchCollection
 from matplotlib.patches import Polygon
+from netCDF4 import Dataset
+import numpy
 import numpy as np
 import matplotlib.cm as cm
 import matplotlib.mlab as mlab
@@ -79,7 +86,8 @@ def get_filename(filename):
 plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
 mpl.rcParams['font.family'] = 'sans-serif'
 mpl.rcParams['font.sans-serif'] = 'Times New Roman'#中文除外的设置成New Roman，中文设置成宋体,NSimSun,
-#path=pathlib.Path('D:\\events\\')
+#path=pathlib.Path('E:\\冯立民\\大气所\\工作\\日照市观测\\固定点雷达\\day\\')
+path=pathlib.Path('D:\\文章\\日照市烟羽模型\\events\\')
 fp='sphere-09-23.txt'
 ft='dust-09-23.txt'
 Ydata=np.loadtxt('Height.txt')#200行*1列 
@@ -111,8 +119,8 @@ Zdata=trans(Zdata)#200行*288列#Zdata=np.transpose(Zdata)
 Zdata=np.array(Zdata,dtype=np.float)
 
 #Zdata=np.where(Zdata>=1, 0.001, Zdata)
-Zdata=np.where(Zdata>=0.19, 0.19, Zdata)
-#Zdata=np.where(Zdata>=0.49, 0.49, Zdata)
+Zdata=np.where(Zdata>=0.175, 0.175, Zdata)
+#Zdata=np.where(Zdata>=0.45, 0.45, Zdata)
 
 Zdata=np.where(Zdata==-999000, 1000, Zdata)
 Zdata=np.where(Zdata<0, 0.001, Zdata)
@@ -192,7 +200,7 @@ Zdata=trans(Zdata)#200行*288列#Zdata=np.transpose(Zdata)
 Zdata=np.array(Zdata,dtype=np.float)
 
 #Zdata=np.where(Zdata>=1, 0.001, Zdata)
-Zdata=np.where(Zdata>=0.19, 0.19, Zdata)
+Zdata=np.where(Zdata>=0.175, 0.175, Zdata)
 #Zdata=np.where(Zdata>=0.49, 0.49, Zdata)
 
 Zdata=np.where(Zdata==-999000, 1000, Zdata)
