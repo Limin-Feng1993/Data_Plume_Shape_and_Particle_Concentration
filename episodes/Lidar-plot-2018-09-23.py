@@ -165,7 +165,8 @@ minval,maxval=0, 0.2
 #minval,maxval=0, 0.5
 #norm = matplotlib.colors.Normalize(vmin=0, vmax=500, clip=False)
 cs = plt.contourf(X,Y,Zdata, np.arange(minval, maxval, 0.001),cmap=plt.cm.get_cmap('jet'))#norm=norm, offset=-2, shrink=.92
-plt.barbs(X4, Y4, U, V,barbcolor='white', flagcolor='r',linewidth=3, length=8, pivot='middle')      
+plt.quiver(X4, Y4, U, V,color='white', width=0.004,scale=150)   
+#plt.barbs(X4, Y4, U, V,barbcolor='white', flagcolor='r',linewidth=3, length=8, pivot='middle')      
 dateS=datetime(2018, 9, 23, 6, 00)
 dateE=datetime(2018, 9, 24, 18, 00)
 plt.xlim(dateS, dateE)                                                                                                  
@@ -250,8 +251,8 @@ minval,maxval=0, 0.2
 #norm = matplotlib.colors.Normalize(vmin=0, vmax=200, clip=False)
 
 cs = plt.contourf(X,Y,Zdata,np.arange(minval,maxval, 0.001),  cmap=plt.cm.get_cmap('jet'))#norm=norm,shrink=.92,offset=-2,
-#plt.quiver(X4, Y4, U, V,color='white', width=0.005,scale=170)                                                                                                          
-plt.barbs(X4, Y4, U, V,barbcolor='white', flagcolor='r',linewidth=3, length=8, pivot='middle')      
+plt.quiver(X4, Y4, U, V,color='white', width=0.004,scale=150)                                                                                                          
+#plt.barbs(X4, Y4, U, V,barbcolor='white', flagcolor='r',linewidth=3, length=8, pivot='middle')      
 dateS=datetime(2018, 9, 23, 6, 00)
 dateE=datetime(2018, 9, 24, 18, 00)
 plt.xlim(dateS, dateE)
