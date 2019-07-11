@@ -167,7 +167,7 @@ minval,maxval=0, 0.2
 cs = plt.contourf(X,Y,Zdata, np.arange(minval, maxval, 0.001),cmap=plt.cm.get_cmap('jet'))#norm=norm, offset=-2, shrink=.92
 #plt.quiver(X4, Y4, U, V,color='white', width=0.004,scale=150)     
 plt.barbs(X4, Y4, U, V,barbcolor='white', flagcolor='r',linewidth=3, length=8, pivot='middle')      
-dateS=datetime(2018, 9, 6, 0, 00)
+dateS=datetime(2018, 9, 7, 6, 00)
 dateE=datetime(2018, 9, 9, 0, 00)
 plt.xlim(dateS, dateE)                                                                                                  
 #设置时间标签显示格式
