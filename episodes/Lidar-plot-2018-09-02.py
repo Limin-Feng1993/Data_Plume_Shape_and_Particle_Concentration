@@ -105,6 +105,12 @@ U=pd.DataFrame(pd.read_excel(df, sheet_name=u'U'))
 V=pd.DataFrame(pd.read_excel(df, sheet_name=u'V'))
 TH=pd.DataFrame(pd.read_excel(df, sheet_name=u'TH'))
 
+U1=U.values
+U2=trans(U1)
+
+V1=V.values
+V2=trans(V1)
+
 X2=TH['Time']
 H3=TH['Height']
 X3=[DT(TS(i)) for i in X2]
@@ -166,7 +172,7 @@ minval,maxval=0, 0.5
 #norm = matplotlib.colors.Normalize(vmin=0, vmax=500, clip=False)
 cs = plt.contourf(X,Y,Zdata, np.arange(minval, maxval, 0.001),cmap=plt.cm.get_cmap('jet'))#norm=norm, offset=-2, shrink=.92
 #plt.quiver(X4, Y4, U, V,color='white', width=0.004,scale=150)    
-plt.barbs(X4, Y4, U, V,barbcolor='white', flagcolor='r',linewidth=3, length=8, pivot='middle')      
+plt.barbs(X4, Y4, U2, V2,barbcolor='white', flagcolor='r',linewidth=3, length=8, pivot='middle')      
 dateS=datetime(2018, 9, 2, 9, 00)
 dateE=datetime(2018, 9, 2, 18, 00)
 plt.xlim(dateS, dateE)                                                                                                  
@@ -252,7 +258,7 @@ minval,maxval=0, 0.5
 
 cs = plt.contourf(X,Y,Zdata,np.arange(minval,maxval, 0.001),  cmap=plt.cm.get_cmap('jet'))#norm=norm,shrink=.92,offset=-2,
 #plt.quiver(X4, Y4, U, V,color='white', width=0.004,scale=150)                                                                                                          
-plt.barbs(X4, Y4, U, V,barbcolor='white', flagcolor='r',linewidth=3, length=8, pivot='middle')      
+plt.barbs(X4, Y4, U2, V2,barbcolor='white', flagcolor='r',linewidth=3, length=8, pivot='middle')      
 dateS=datetime(2018, 9, 2, 9, 00)
 dateE=datetime(2018, 9, 2, 18, 00)
 plt.xlim(dateS, dateE)
